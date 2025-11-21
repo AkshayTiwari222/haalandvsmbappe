@@ -1,0 +1,457 @@
+/* ============================================
+   BASE RESET
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.brand-sub {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.top-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.nav-link-active {
+  background: #111827;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+/* ============================================
+   PAGE WRAPPER
+   ============================================ */
+.page {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px 40px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.hero-text {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  max-width: 700px;
+  color: #4b5563;
+}
+
+.hero-note {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.hero-chip {
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 4px 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+/* ============================================
+   PLAYER CARDS
+   ============================================ */
+.duo-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.player-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeUp .8s forwards ease;
+}
+
+.player-card-right {
+  animation-delay: .15s;
+}
+
+.player-header {
+  margin-bottom: 10px;
+}
+
+.player-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.player-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-box {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.stat-value {
+  margin-top: 4px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.stat-value-small {
+  margin-top: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+.section-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tab-btn {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.tab-btn-active {
+  background: #111827;
+  color: white;
+}
+
+/* ============================================
+   TAB PANELS
+   ============================================ */
+.tab-panel {
+  display: none;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.tab-panel-active {
+  display: block;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   STATS TABLE
+   ============================================ */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.stats-table th {
+  background: #f3f4f6;
+  padding: 8px;
+}
+
+.stats-table td {
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.stats-table th,
+.stats-table td {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.stats-table td:first-child {
+  text-align: left;
+}
+
+/* ============================================
+   TWO COL LAYOUT
+   ============================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+}
+
+.panel {
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.panel-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.chart-canvas {
+  width: 100%;
+  max-height: 260px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  margin-top: 30px;
+  padding: 16px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .duo-section {
+    grid-template-columns: 1fr;
+  }
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .player-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==================================================
+   ADMIN DASHBOARD (PREMIUM)
+   ================================================== */
+
+.admin-body {
+  margin: 0;
+  background: #0f1117;
+  color: #e5e5e5;
+  display: flex;
+}
+
+.admin-sidebar {
+  width: 230px;
+  background: #151821;
+  height: 100vh;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2a2d36;
+}
+
+.admin-logo {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #00eaff;
+}
+
+.admin-nav-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #d0d0d0;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  display: block;
+  border: 1px solid transparent;
+}
+
+.admin-nav-item:hover {
+  background: #1d212d;
+  color: white;
+}
+
+.admin-nav-item-active {
+  background: #00eaff;
+  color: #0f1117;
+  font-weight: 700;
+}
+
+.admin-footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.admin-subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+.admin-section {
+  background: #1a1d27;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #2a2e3a;
+  margin-bottom: 20px;
+}
+
+.admin-section-title {
+  color: #00eaff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.admin-label {
+  font-size: 0.85rem;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 10px;
+  background: #0f1117;
+  border: 1px solid #3a3f50;
+  color: white;
+  border-radius: 8px;
+}
+
+.admin-save-btn {
+  padding: 14px 20px;
+  background: #00eaff;
+  color: #0f1117;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}

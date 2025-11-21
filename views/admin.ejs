@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard – Haaland vs Mbappé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body class="admin-body">
+  
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <div class="admin-logo">HV M</div>
+
+    <nav class="admin-nav">
+      <a href="/?key=<%= key %>" class="admin-nav-item">🏠 View Website</a>
+      <a class="admin-nav-item admin-nav-item-active">⚙️ Edit Stats</a>
+    </nav>
+
+    <div class="admin-footer">
+      Admin Panel
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+    <h1 class="admin-title">Edit Player Stats</h1>
+    <p class="admin-subtitle">Update stats below and hit save. Changes update instantly on the website.</p>
+
+    <form class="admin-form" method="POST" action="/admin/save">
+      <input type="hidden" name="key" value="<%= key %>">
+
+      <!-- HAALAND -->
+      <div class="admin-section">
+        <h2 class="admin-section-title">Erling Haaland</h2>
+
+        <label class="admin-label">Goals</label>
+        <input type="number" name="haaland_goals" class="admin-input" value="<%= stats.haaland_goals %>" />
+
+        <label class="admin-label">Assists</label>
+        <input type="number" name="haaland_assists" class="admin-input" value="<%= stats.haaland_assists %>" />
+
+        <label class="admin-label">Appearances</label>
+        <input type="number" name="haaland_apps" class="admin-input" value="<%= stats.haaland_apps %>" />
+      </div>
+
+      <!-- MBAPPE -->
+      <div class="admin-section">
+        <h2 class="admin-section-title">Kylian Mbappé</h2>
+
+        <label class="admin-label">Goals</label>
+        <input type="number" name="mbappe_goals" class="admin-input" value="<%= stats.mbappe_goals %>" />
+
+        <label class="admin-label">Assists</label>
+        <input type="number" name="mbappe_assists" class="admin-input" value="<%= stats.mbappe_assists %>" />
+
+        <label class="admin-label">Appearances</label>
+        <input type="number" name="mbappe_apps" class="admin-input" value="<%= stats.mbappe_apps %>" />
+      </div>
+
+      <button type="submit" class="admin-save-btn">Save Changes</button>
+    </form>
+  </main>
+
+</body>
+</html>
